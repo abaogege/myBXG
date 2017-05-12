@@ -2,8 +2,11 @@ require.config({
     baseUrl:'/',
     paths:{
         //common
+        index:'/js/common/index',
         aside:'/js/common/aside',
         header:'/js/common/header',
+        tool:'/js/common/tool',
+        
 
         //course
         add:'/js/course/add',
@@ -21,6 +24,7 @@ require.config({
         //teacher
         tcEdit:'/js/teacher/edit',
         tcList:'/js/teacher/list',       
+        tcAdd:'/js/teacher/add',
 
         //user
         usList:'/js/user/list',
@@ -29,12 +33,16 @@ require.config({
         //插件
         jquery:'/lib/jquery/jquery',
         bootstrap:'/lib/bootstrap/js/bootstrap',
-        jqueryForm:'/lib/jquery-form/jquery.form'
+        jqueryForm:'/lib/jquery-form/jquery.form',
+        template:'/lib/artTemplate/template'
     },
 
 
 
     shim:{
+        tool:{
+            exports:'abaoTools'
+        },
         bootstrap:{
             deps:["jquery"]
         }
@@ -44,6 +52,7 @@ require.config({
 
 //定义一个对象储存每个网页对应的模块
 var obj = {
+        '/':'index',
         //common
         '/html/common/aside.html':'aside',
         '/html/common/header.html':'header',
@@ -64,7 +73,7 @@ var obj = {
 
         //teacher
         '/html/teacher/edit.html':'tcEdit',           
-        '/html/teacher/list.html':'tcList',         
+        '/html/teacher/list.html':'tcList',          '/html/teacher/add.html':'tcAdd',   
 
         //user
         '/html/user/list.html':'usList',         
