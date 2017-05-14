@@ -1,1 +1,0 @@
-define(['header','bootstrap'],function () {  })
