@@ -1,5 +1,5 @@
 define(['jquery'],function ($) {
-   
+   //退出按钮逻辑
     $("#signout").on("click",function(){
         $.ajax({
             url:"/v6/logout",
@@ -9,4 +9,11 @@ define(['jquery'],function ($) {
             }
         })
     })
+
+    //个人中心
+    // $("#header-setting").on("click",function () { 
+    //     $.ajax({
+    //         url:"/v6/teacher/profile"
+    //     })
+    //  })
 })
