@@ -1,4 +1,4 @@
-define(['jquery','tool','nprogress','aside','header'],
+define(['jquery','tool','nprogress','aside','header','uploadify','jcrop'],
 function ($,abaoTools,NProgress) { 
     //确认是否登录并处理
     abaoTools.jumpToLogin();

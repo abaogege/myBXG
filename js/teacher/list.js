@@ -2,7 +2,6 @@ define(['jquery','template','tool','nprogress','bootstrap','header','aside'],fun
     //注册template函数
     temp.helper('getAge',tool.getAge) ;
 
-    var index = 0;
     // temp.defaults.imports.index = index;
 
 
@@ -26,7 +25,7 @@ define(['jquery','template','tool','nprogress','bootstrap','header','aside'],fun
         success:function (data) {             
             data.result.forEach(function (v,i,arr) {      
                 // ++index;         
-                
+                v.num = i+1
                 $("#tc-list-tbody").append(temp("tc-list-temp",v));       
             });
         }
@@ -59,7 +58,7 @@ define(['jquery','template','tool','nprogress','bootstrap','header','aside'],fun
                 // 将注销状态绑定在dom
                 $(e.target).parent().attr("tc-status",data.result.tc_status);
                 //根据绑定的状态确定按钮的值
-                if(data.result.tc_status===0){
+                if(data.result.tc_status===1){
                      $(e.target).html("启 用")
                 }else{
                      $(e.target).html("注 销")
@@ -67,5 +66,7 @@ define(['jquery','template','tool','nprogress','bootstrap','header','aside'],fun
            }
        })
      })
-})
 
+     //给编辑按钮添加逻辑
+})
+ 

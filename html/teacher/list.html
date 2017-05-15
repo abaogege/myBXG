@@ -115,17 +115,17 @@
     </div>
     <script type='text/html' id="tc-list-temp">
         <tr>
-            <td>{{1}}</td>
+            <td>{{num}}</td>
             <td>{{tc_name}}</td>
             <td>{{tc_roster}}</td>
             <td>{{ getAge(tc_birthday) }}</td>
-            <td>{{tc_gender == 1?"男":"女"}}</td>
+            <td>{{tc_gender == 0?"男":"女"}}</td>
             <td>{{tc_cellphone}}</td>
             <td class="tc-caozuo" tc-id="{{ tc_id }}" tc-status="{{tc_status}}">
                 <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs tc-list-check">查 看</a>
-                <a href="/html/teacher/edit.html" class="btn btn-info btn-xs">编 辑</a>
+                <a href="/html/teacher/edit.html?{{ tc_id }}" class="btn btn-info btn-xs">编 辑</a>
                 <a href="javascript:;" class="btn btn-warning btn-xs tc-list-status">
-                    {{tc_status==1?"注 销":"启 用"}}
+                    {{tc_status==0?"注 销":"启 用"}}
                 </a>
             </td>
         </tr>
@@ -151,7 +151,7 @@
             </tr>
             <tr>
                 <th>性别:</th>
-                <td>{{tc_gender == 1?"男":"女"}}</td>
+                <td>{{tc_gender == 0?"男":"女"}}</td>
                 <th>出生日期:</th>
                 <td colspan="3">{{tc_birthday}}</td>
             </tr>

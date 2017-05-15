@@ -41,7 +41,8 @@ require.config({
         datepicker:'/lib/bootstrap-datepicker/js/bootstrap-datepicker',
         datepickerLang:'/lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         region:'/lib/jquery-region/jquery.region',
-        uploadify:'/lib/uploadify/jquery.uploadify'
+        uploadify:'/lib/uploadify/jquery.uploadify',
+        jcrop:'/lib/jquery-jcrop/js/jquery.Jcrop'
 
     },
 
@@ -59,6 +60,9 @@ require.config({
             deps:['datepicker','jquery']
         },
         uploadify:{
+            deps:['jquery']
+        },
+        jcrop:{
             deps:['jquery']
         }
     }

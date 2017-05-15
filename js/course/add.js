@@ -11,7 +11,8 @@ define(['jquery','bootstrap','header','aside','jqueryForm'], function($) {
             "cs_name":$("input[type=text]").val(),
         },
         success:function (data) {
-            location.href='/html/course/course_add_step1.html'
+            // console.log(data);
+            location.href='/html/course/course_add_step1.html?'+data.result.cs_id
           },
           error:function () {  
               console.log("失败");
