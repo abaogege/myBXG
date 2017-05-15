@@ -37,7 +37,12 @@ require.config({
         jqueryForm:'/lib/jquery-form/jquery.form',
         template:'/lib/artTemplate/template',
         cookie:'/lib/jquery-cookie/jquery.cookie',
-        nprogress:'/lib/nprogress/nprogress'
+        nprogress:'/lib/nprogress/nprogress',
+        datepicker:'/lib/bootstrap-datepicker/js/bootstrap-datepicker',
+        datepickerLang:'/lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        region:'/lib/jquery-region/jquery.region',
+        uploadify:'/lib/uploadify/jquery.uploadify'
+
     },
 
 
@@ -49,6 +54,12 @@ require.config({
         },
         bootstrap:{
             deps:["jquery"]
+        },
+        datepickerLang:{
+            deps:['datepicker','jquery']
+        },
+        uploadify:{
+            deps:['jquery']
         }
     }
 });

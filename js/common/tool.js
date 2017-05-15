@@ -144,5 +144,9 @@
             }
         },
 
+        regionStrToArr:function (str) {  
+            return str.split("|")
+        }
+
     }
 
