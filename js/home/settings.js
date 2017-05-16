@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'nprogress', 'tool', 'bootstrap', 'header', 'aside', 'jqueryForm', 'datepicker', 'datepickerLang', 'region','uploadify'],
+define(['jquery', 'template', 'nprogress', 'tool', 'bootstrap', 'header', 'aside', 'jqueryForm', 'datepicker', 'datepickerLang', 'region', 'uploadify'],
     function ($, temp, NProgress, abaoTools) {
         //确认是否登录并处理
         abaoTools.jumpToLogin();
@@ -26,16 +26,16 @@ define(['jquery', 'template', 'nprogress', 'tool', 'bootstrap', 'header', 'aside
                 //uploadify插件
                 $("#upfile").uploadify({
                     swf: '/lib/uploadify/uploadify.swf',
-                    fileObjName:"tc_avatar",
-                    uploader:"/v6/uploader/avatar",
+                    fileObjName: "tc_avatar",
+                    uploader: "/v6/uploader/avatar",
                     fileTypeExts: '*.gif; *.jpg; *.png',
-                    buttonText:"",
-                    onUploadSuccess:function (obj,data) { 
+                    buttonText: "",
+                    onUploadSuccess: function (obj, data) {
                         alert("上传成功");
                         console.log(obj);
                         console.log(data);
                         console.log(JSON.parse(data));
-                        $("#tc-avatar-img").attr("src",(JSON.parse(data)).result.path)
+                        $("#tc-avatar-img").attr("src", (JSON.parse(data)).result.path)
                     }
                 })
 
@@ -68,12 +68,13 @@ define(['jquery', 'template', 'nprogress', 'tool', 'bootstrap', 'header', 'aside
                             "tc_city": $("#d").val(),
                             "tc_district": $("#c").val(),
                             // "tc_hometwon":怎么处理？
+                            "tc_hometown": $("#p").find(":selected").html()+"|"+$("#d").find(":selected").html()+"|"+$("#c").find(":selected").html()
                         },
 
                     })
                 });
 
-                
+
             }
         })
 
