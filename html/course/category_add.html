@@ -46,10 +46,10 @@
                             <label for="" class="col-xs-4 control-label">是否显示</label>
                             <div class="col-xs-3">
                                 <label class="checkbox-inline">
-                                    <input type="checkbox"> 是
+                                    <input name="cg_is_hide" type="radio" value="0" checked> 是
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox"> 否
+                                    <input  name="cg_is_hide"  type="radio" value="1"> 否
                                 </label>
                             </div>
                         </div>
@@ -83,6 +83,9 @@
                             <label for="" class="col-xs-4 control-label">级别</label>
                             <div class="col-xs-2">
                                 <select name="cg_pid" class="form-control input-sm" value="{{cg_pid}}" >
+
+                                    <option value="0">顶级分类</option>
+
                                     {{each top as v i }}
                                     <option value="{{v.cg_id}}"
                                     {{cg_pid==v.cg_id?"selected":""}}
@@ -104,10 +107,10 @@
                             <label for="" class="col-xs-4 control-label">是否显示</label>
                             <div class="col-xs-3">
                                 <label class="checkbox-inline">
-                                    <input name= "cg_is_hide" {{cg_is_hide==1?"checked":""}} type="radio" value=1> 是
+                                    <input name= "cg_is_hide" {{cg_is_hide==0?"checked":""}} type="radio" value="0"> 是
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input name= "cg_is_hide" {{cg_is_hide!=1?"checked":""}} type="radio" value=0> 否
+                                    <input name= "cg_is_hide" {{cg_is_hide!=0?"checked":""}} type="radio" value="1"> 否
                                 </label>
                             </div>
                         </div>
@@ -124,7 +127,11 @@
          <label for="" class="col-xs-4 control-label">级别</label>
                             <div class="col-xs-2">
                                 <select name="cg_pid" class="form-control input-sm" >
+
+                                    <option value="0">顶级分类</option>
+                                    
                                     {{each result as v i }}
+                                    
                                     <option value="{{v.cg_id}}">{{v.cg_name}}</option>
                                     
                                     {{/each}}

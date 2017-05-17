@@ -55,6 +55,8 @@ define(['jquery', 'tool', 'nprogress', 'template', 'aside', 'header', 'uploadify
             fileTypeExts: '*.gif; *.jpg; *.png',
             buttonText: "选择图片",
             buttonClass: "btn btn-success btn-sm",
+            itemTemplate:"<s></s>",
+            width:70,
             onUploadSuccess: function (obj, data) {
                 alert("上传成功");
                 console.log(obj);

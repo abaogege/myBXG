@@ -30,7 +30,7 @@ define(['jquery','cookie'],function ($) {
 
         '/html/course/list.html':'/html/course/list.html',
         '/html/course/category_list.html':'/html/course/category_list.html',
-        '/html/course/list.html':'/html/course/list.html',
+        '/html/course/category_add.html':'/html/course/category_list.html',
         //user
         '/html/user/list.html':'/html/user/list.html',
         '/html/user/profile.html':'/html/user/list.html',

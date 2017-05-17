@@ -19,10 +19,10 @@ define(['jquery', 'tool', 'nprogress', 'template', 'aside', 'header', 'jqueryFor
         //判断是添加还是编辑
         //添加
         if (!location.search) {
-
+            getTop()
             $("#cg-manager-form").ajaxForm({
                 success: function (data) {
-                    console.log(data);
+                    location.href = "/html/course/category_list.html"
                 }
             })
         }
@@ -40,7 +40,7 @@ define(['jquery', 'tool', 'nprogress', 'template', 'aside', 'header', 'jqueryFor
                     //点击保存，发送数据
                     $("#cg-manager-form").ajaxForm({
                         success: function (data) {
-                            console.log(data);
+                            location.href = "/html/course/category_list.html"
                         }
                     })
                 }
@@ -54,19 +54,6 @@ define(['jquery', 'tool', 'nprogress', 'template', 'aside', 'header', 'jqueryFor
                 success: function (data) {
 
                     $("#cg-manager-top-box").html(temp("cg-manager-top", data));
-                }
-            })
-        }
-
-        function getChilds(cg_id) {
-            $.ajax({
-                data: {
-                    "cg_id": cg_id
-                },
-                url: "/v6/category/child",
-                type: "post",
-                success: function () {
-
                 }
             })
         }

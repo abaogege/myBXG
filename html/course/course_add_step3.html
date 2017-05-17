@@ -66,6 +66,7 @@
                         </div>
                         <div class="lessons">
                             <ul class="list-unstyled" id="cg-list">
+                                
                                <!--cg-list模板-->
                             </ul>
                         </div>
@@ -144,7 +145,7 @@
 
     <script type="text/html" id="cg-info-temp">
         <div class="thumb">
-            <img src="{{cs_cover}}" alt="">
+            <img src="{{cs_cover?cs_cover:"/img/course.png"}}" alt="">
         </div>
         <dl class="info">
             <dt>{{cs_name}}</dt>
