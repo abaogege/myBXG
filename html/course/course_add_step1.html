@@ -161,7 +161,7 @@
                 <select name="cs_cg_id" class="form-control input-sm">
                                 {{each category.top as v i}}
                                         <option value="{{v.cg_id}}"
-                                            {{cs_cg_id==v.cg_id?"selected":""}}
+                                            {{cs_cg_pid==v.cg_id?"selected":""}}
                                         >{{v.cg_name}}</option>
                                         {{/each}}
                                     </select>
