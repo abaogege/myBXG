@@ -17,6 +17,8 @@ define(['jquery', 'tool', 'nprogress', 'template', 'aside', 'header', 'uploadify
         $("#cs-manager-list").show()
 
 
+        var jcrop = null;
+
         $.ajax({
             url: "/v6/course/basic",
             type: "post",
@@ -69,17 +71,38 @@ define(['jquery', 'tool', 'nprogress', 'template', 'aside', 'header', 'uploadify
                     e.preventDefault();
                     console.log($(this).html());
 
-                    if ($(this).html() == "保存") {
+
+
+                     //点击启用jcrop插件
+                    if ($(this).html() == "裁切图片") {
+                        $("#cs-img").Jcrop({
+                            aspectRatio: 2,
+                            setSelect: [0, 0, 300, 150],
+                            bgColor: 'black',
+                            minSize:[300,150],
+
+                        }, function () {
+                            jcrop=this;
+                            // console.log(this);
+                            // console.log(jcrop);
+                            // console.log(jcrop.getSelection());
+                            $("#cs-img-recover").html("保存");
+                        });
+                        
+                        
+                    } else  {
+                        var select= jcrop.getSelection();
+                        console.log(select);
                         //发送裁剪数据
                         $.ajax({
                             url: "/v6/course/update/picture",
                             type: "post",
                             data: {
                                 "cs_id": location.search.slice(1),
-                                "x": 0,
-                                "y": 0,
-                                "w": 300,
-                                "h": 150
+                                "x": select.x,
+                                "y": select.y,
+                                "w": select.w,
+                                "h": select.h
                             },
                             success: function () {
                                 alert("保存成功！");
@@ -89,17 +112,7 @@ define(['jquery', 'tool', 'nprogress', 'template', 'aside', 'header', 'uploadify
                     }
 
 
-                    //点击启用jcrop插件
-                    if ($(this).html() == "裁切图片") {
-                        $(this).html("保存");
-                        $("#cs-img").Jcrop({
-                            aspectRatio: 0,
-                            setSelect: [0, 0, 300, 150],
-                            bgColor: 'black',
-                        }, function () {
-
-                        });
-                    }
+                   
 
 
                     
